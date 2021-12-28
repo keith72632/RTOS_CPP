@@ -1,0 +1,17 @@
+17:38:18 **** Incremental Build of configuration Debug for project TaskScheduler ****
+make -j12 all 
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-g++ -o "TaskScheduler.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/khorton/Documents/TaskSchedulerCPP/TaskScheduler/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TaskScheduler.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: TaskScheduler.elf
+ 
+arm-none-eabi-size   TaskScheduler.elf 
+arm-none-eabi-objdump -h -S  TaskScheduler.elf  > "TaskScheduler.list"
+arm-none-eabi-objcopy  -O binary  TaskScheduler.elf  "TaskScheduler.bin"
+   text	   data	    bss	    dec	    hex	filename
+   3708	    108	   1596	   5412	   1524	TaskScheduler.elf
+Finished building: default.size.stdout
+ 
+Finished building: TaskScheduler.bin
+ 
+Finished building: TaskScheduler.list
+ 
