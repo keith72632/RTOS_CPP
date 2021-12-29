@@ -20,10 +20,11 @@
 #include <stdio.h>
 #include "tasks.h"
 #include "stack.h"
-
+#include "systick.h"
 
 int main(void)
 {
+	Systick::init(TICK_HZ);
 	task_one_handler();
     /* Loop forever */
 	for(;;);

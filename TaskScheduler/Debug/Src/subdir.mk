@@ -9,7 +9,8 @@ C_SRCS += \
 ../Src/sysmem.c 
 
 CPP_SRCS += \
-../Src/main.cpp 
+../Src/main.cpp \
+../Src/systick.cpp 
 
 C_DEPS += \
 ./Src/syscalls.d \
@@ -18,10 +19,12 @@ C_DEPS += \
 OBJS += \
 ./Src/main.o \
 ./Src/syscalls.o \
-./Src/sysmem.o 
+./Src/sysmem.o \
+./Src/systick.o 
 
 CPP_DEPS += \
-./Src/main.d 
+./Src/main.d \
+./Src/systick.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -33,7 +36,7 @@ Src/%.o: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/main.d ./Src/main.o ./Src/syscalls.d ./Src/syscalls.o ./Src/sysmem.d ./Src/sysmem.o
+	-$(RM) ./Src/main.d ./Src/main.o ./Src/syscalls.d ./Src/syscalls.o ./Src/sysmem.d ./Src/sysmem.o ./Src/systick.d ./Src/systick.o
 
 .PHONY: clean-Src
 

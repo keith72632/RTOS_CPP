@@ -1,0 +1,2 @@
+systick.cpp:14:7:void Systick::init(uint32_t)	32	static
+systick.cpp:27:17:void SysTick_Handler()	8	static

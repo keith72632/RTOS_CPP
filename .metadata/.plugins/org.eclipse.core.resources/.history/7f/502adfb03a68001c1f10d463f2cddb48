@@ -1,0 +1,23 @@
+/*
+ * systick.h
+ *
+ *  Created on: Dec 28, 2021
+ *      Author: khorton
+ */
+
+#ifndef SYSTICK_H_
+#define SYSTICK_H_
+
+#include <stdio.h>
+
+/*
+ * Processor Clock = 16MHz
+ * Systick count clock = 16MHz
+ * 1ms = 1KHz in frequency domain. Use divisor
+ * Reload value (count value) = 16000
+ * */
+namespace Systick {
+	void init(void);
+}
+
+#endif /* SYSTICK_H_ */

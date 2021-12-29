@@ -1,0 +1,18 @@
+/*
+ * systick.cpp
+ *
+ *  Created on: Dec 28, 2021
+ *      Author: khorton
+ */
+
+
+
+
+#include "systick.h"
+
+namespace Systick {
+	void init(int tick_hz)
+	{
+		printf("Systick init\n");
+	}
+}
