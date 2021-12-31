@@ -1,0 +1,52 @@
+/*
+ * stack.cpp
+ *
+ *  Created on: Dec 29, 2021
+ *      Author: khorton
+ */
+
+#include "stack.h"
+#include "tasks.h"
+
+#define MAX_TASKS    4
+
+uint32_t psp_of_tasks[MAX_TASKS]  = {
+		T1_STACK_START,
+		T2_STACK_START,
+		T3_STACK_START,
+		T4_STACK_START
+};
+
+uint32_t task_handlers[MAX_TASKS] = {
+		(uint32_t)task_one_handler,
+		(uint32_t)task_two_handler,
+		(uint32_t)task_three_handler,
+		(uint32_t)task_four_handler
+};
+
+__attribute__((naked)) void init_scheduler_stack(uint32_t sched_stack_start)
+{
+	__asm volatile("MSR MSP,%0" : : "r"(sched_stack_start) : );
+	__asm volatile("BX LR");
+}
+
+void init_task_stack(void)
+{
+	uint32_t *pPSP = NULL;
+
+	for(size_t i = 0; i < MAX_TASKS; i++)
+	{
+		//stack is full descending, so set register then decremement
+		pPSP = (uint32_t*)psp_of_tasks[i];    //stack pointer. No dereference, because this is the location in memory of task stack
+
+		pPSP--;
+		*pPSP = DUMMY_XPSR;
+
+		pPSP--;// Program Counter
+		*pPSP = task_handlers[i];
+
+		pPSP--; //Link Register
+		*pPSP = 0xFFFFFFFD;
+
+	}
+}

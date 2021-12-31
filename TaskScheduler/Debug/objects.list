@@ -1,3 +1,5 @@
+"./Inc/faults.o"
+"./Inc/stack.o"
 "./Inc/tasks.o"
 "./Src/main.o"
 "./Src/syscalls.o"

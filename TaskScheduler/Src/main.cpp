@@ -21,10 +21,21 @@
 #include "tasks.h"
 #include "stack.h"
 #include "systick.h"
+#include "faults.h"
+
+
 
 int main(void)
 {
+	Faults::enable_faults();
+
+	init_scheduler_stack(SCHED_STACK_START);
+	init_task_stack();
+
 	Systick::init(TICK_HZ);
+
+	switch_to_psp();
+
 	task_one_handler();
     /* Loop forever */
 	for(;;);

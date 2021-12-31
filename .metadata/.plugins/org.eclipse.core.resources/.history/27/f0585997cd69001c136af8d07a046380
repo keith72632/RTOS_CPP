@@ -1,0 +1,41 @@
+/*
+ * systick.cpp
+ *
+ *  Created on: Dec 28, 2021
+ *      Author: khorton
+ */
+
+
+
+
+#include "systick.h"
+#include "stack.h"
+
+namespace Systick {
+	void init(uint32_t tick_hz)
+	{
+		uint32_t *pSRVR = (uint32_t*)0xE000E014;
+		uint32_t *pCSR  = (uint32_t*)0xE000E010;
+		uint32_t count_value = (SYSTICK_TIM_CLK / tick_hz) - 1;
+
+		*pSRVR &= ~0xFFFFFF;
+		*pSRVR |= count_value;
+
+		*pCSR |= 1 << 2 | 1 << 1 | 1 << 0;
+	}
+}
+
+extern "C" {
+	__attribute__((naked)) void SysTick_Handler()
+	{
+		//get current running tasks psp value
+		__asm volatile("MRS R0,PSP");
+
+		//store decremnt before. Starts at R0 (which has psp value currently) and stores registers
+		__asm volatile("STMDB R0!,{R40R11}");
+
+		//save the current value of psp
+
+		printf("tick\n");
+	}
+}

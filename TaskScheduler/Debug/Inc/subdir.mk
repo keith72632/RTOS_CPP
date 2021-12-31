@@ -5,12 +5,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Inc/faults.cpp \
+../Inc/stack.cpp \
 ../Inc/tasks.cpp 
 
 OBJS += \
+./Inc/faults.o \
+./Inc/stack.o \
 ./Inc/tasks.o 
 
 CPP_DEPS += \
+./Inc/faults.d \
+./Inc/stack.d \
 ./Inc/tasks.d 
 
 
@@ -21,7 +27,7 @@ Inc/%.o: ../Inc/%.cpp Inc/subdir.mk
 clean: clean-Inc
 
 clean-Inc:
-	-$(RM) ./Inc/tasks.d ./Inc/tasks.o
+	-$(RM) ./Inc/faults.d ./Inc/faults.o ./Inc/stack.d ./Inc/stack.o ./Inc/tasks.d ./Inc/tasks.o
 
 .PHONY: clean-Inc
 

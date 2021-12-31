@@ -1,0 +1,13 @@
+/*
+ * stack.cpp
+ *
+ *  Created on: Dec 29, 2021
+ *      Author: khorton
+ */
+
+#include "stack.h"
+
+void init_scheduler_stack(SCHED_STACK_START)
+{
+
+}
