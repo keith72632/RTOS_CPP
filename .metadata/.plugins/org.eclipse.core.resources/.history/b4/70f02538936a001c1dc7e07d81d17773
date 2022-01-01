@@ -1,0 +1,20 @@
+/*
+ * led.h
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: khorton
+ */
+
+#ifndef LED_H_
+#define LED_H_
+
+#include <stdint.h>
+
+namespace Led {
+	void init_led();
+	void led_on();
+}
+
+
+
+#endif /* LED_H_ */

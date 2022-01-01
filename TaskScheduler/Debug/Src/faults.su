@@ -1,0 +1,7 @@
+faults.cpp:15:7:void Faults::enable_faults()	16	static
+faults.cpp:21:7:void Faults::gen_usage_fault()	16	static
+faults.cpp:29:7:void Faults::gen_memory_fault()	16	static
+faults.cpp:40:8:void HardFault_Handler()	8	static
+faults.cpp:46:8:void MemManage_Handler()	8	static
+faults.cpp:52:8:void BusFault_Handler()	8	static
+faults.cpp:58:8:void UsageFault_Handler()	8	static

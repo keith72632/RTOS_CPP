@@ -9,14 +9,14 @@
 #define TASKS_H_
 
 #include <stdio.h>
+#include <stdint.h>
 
-#ifdef __cplusplus
-extern "C" {
+namespace Tasks {
 	void task_one_handler();
 	void task_two_handler();
 	void task_three_handler();
 	void task_four_handler();
 }
-#endif
+
 
 #endif /* TASKS_H_ */

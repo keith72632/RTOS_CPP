@@ -1,0 +1,35 @@
+/*
+ * timers.cpp
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: khorton
+ */
+
+#include "timers.h"
+
+namespace Timer {
+	typedef struct TIM4 {
+		uint32_t CR1;
+		uint32_t CR2;
+		uint32_t SMCR;
+		uint32_t EGR;
+		uint32_t CCMR1;
+		uint32_t CCMR2;
+		uint32_t CNT;
+		uint32_t PSC;
+		uint32_t ARR;
+		uint32_t CCR1;
+		uint32_t CCR2;
+		uint32_t CCR3;
+		uint32_t CCR4;
+		uint32_t DCR;
+		uint32_t DMAR;
+
+	}__attribute__((packed))TIM4_t;
+	void init_tim2(void)
+	{
+		uint32_t volatile *rcc = (uint32_t*)0x40023840;
+		TIM4_t volatile *tim4 = (TIM4_t*)0x40000800;
+		*rcc |= (1 << 2);
+	}
+}

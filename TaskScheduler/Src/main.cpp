@@ -22,21 +22,24 @@
 #include "stack.h"
 #include "systick.h"
 #include "faults.h"
-
+#include "led.h"
+#include "timers.h"
 
 
 int main(void)
 {
+	Led::init_all_leds();
+	Timer::init_tim4();
 	Faults::enable_faults();
 
-	init_scheduler_stack(SCHED_STACK_START);
-	init_task_stack();
+	Stacks::init_scheduler_stack(SCHED_STACK_START);
+	Stacks::init_task_stack();
 
 	Systick::init(TICK_HZ);
 
 	switch_to_psp();
 
-	task_one_handler();
+	Tasks::task_one_handler();
     /* Loop forever */
 	for(;;);
 }

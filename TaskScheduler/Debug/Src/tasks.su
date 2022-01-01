@@ -1,0 +1,4 @@
+tasks.cpp:14:7:void Tasks::task_one_handler()	8	static
+tasks.cpp:24:7:void Tasks::task_two_handler()	8	static
+tasks.cpp:34:7:void Tasks::task_three_handler()	8	static
+tasks.cpp:44:7:void Tasks::task_four_handler()	8	static

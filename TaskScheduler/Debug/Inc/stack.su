@@ -1,7 +1,9 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-stack.cpp:33:11:uint32_t get_psp_value()	4	static
+stack.cpp:33:11:uint32_t get_psp_value()	8	static
 stack.cpp:38:7:void save_psp_value(uint32_t)	16	static
-stack.cpp:43:7:void update_next_task()	4	static
-stack.cpp:49:30:void switch_to_psp()	0	static,ignoring_inline_asm
-stack.cpp:73:29:void init_scheduler_stack(uint32_t)	0	static,ignoring_inline_asm
-stack.cpp:79:6:void init_task_stack()	24	static
+stack.cpp:43:7:void update_next_task()	8	static
+stack.cpp:50:30:void switch_to_psp()	0	static,ignoring_inline_asm
+stack.cpp:74:29:void init_scheduler_stack(uint32_t)	0	static,ignoring_inline_asm
+stack.cpp:80:6:void init_task_stack()	24	static
+array:185:7:std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::operator[](std::array<_Tp, _Nm>::size_type) [with _Tp = long unsigned int; unsigned int _Nm = 4]	16	static
+array:55:7:static constexpr _Tp& std::__array_traits<_Tp, _Nm>::_S_ref(const _Tp (&)[_Nm], std::size_t) [with _Tp = long unsigned int; unsigned int _Nm = 4]	16	static

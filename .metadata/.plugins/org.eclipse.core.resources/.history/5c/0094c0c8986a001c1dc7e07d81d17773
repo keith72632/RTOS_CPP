@@ -1,0 +1,20 @@
+/*
+ * timers.cpp
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: khorton
+ */
+
+#include "timers.h"
+
+namespace Timer {
+	typedef struct TIM4 {
+
+	}TIM4_t;
+	void init_tim2(void)
+	{
+		uint32_t volatile *rcc = (uint32_t*)0x40023840;
+		uint32_t volatile *tim4 = (uint32_t*)0x40000800;
+		*rcc |= (1 << 2);
+	}
+}

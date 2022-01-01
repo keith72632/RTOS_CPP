@@ -1,0 +1,16 @@
+/*
+ * timers.cpp
+ *
+ *  Created on: Dec 31, 2021
+ *      Author: khorton
+ */
+
+#include "timers.h"
+
+namespace Timer {
+	void init_tim2(void)
+	{
+		uint32_t volatile *rcc = (uint32_t*)0x40023840;
+		*rcc |= (1 << 2);
+	}
+}

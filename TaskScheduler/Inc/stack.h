@@ -34,7 +34,9 @@ extern "C" {
 	void update_next_task(void);
 }
 
-__attribute__((naked)) void init_scheduler_stack(uint32_t sched_stack_start);
-void init_task_stack(void);
+namespace Stacks {
+	__attribute__((naked)) void init_scheduler_stack(uint32_t sched_stack_start);
+	void init_task_stack(void);
+}
 
 #endif /* STACK_H_ */
