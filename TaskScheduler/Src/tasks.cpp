@@ -11,12 +11,19 @@
 #include "timers.h"
 
 namespace Tasks {
+	Usart *usart;
+	void tasks_uart(USART_t usart)
+	{
+		Tasks::usart = new Usart(usart);
+	}
+
 	void task_one_handler()
 	{
 		while(1)
 		{
+			Led::delay(10);
 			Led::led_on(RED);
-			Timer::dMs(1);
+			Tasks::usart->puts("Task One\n\r");
 			printf("Task one\n");
 		}
 	}
@@ -25,8 +32,9 @@ namespace Tasks {
 	{
 		while(1)
 		{
+			Led::delay(8);
 			Led::led_on(GREEN);
-			Led::delay();
+			Tasks::usart->puts("Task Two\n\r");
 			printf("Task two\n");
 		}
 	}
@@ -35,8 +43,9 @@ namespace Tasks {
 	{
 		while(1)
 		{
+			Led::delay(6);
 			Led::led_on(BLUE);
-			Led::delay();
+			Tasks::usart->puts("Task Three\n\r");
 			printf("Task three\n");
 		}
 	}
@@ -45,8 +54,9 @@ namespace Tasks {
 	{
 		while(1)
 		{
+			Led::delay(4);
 			Led::led_on(ORANGE);
-			Led::delay();
+			Tasks::usart->puts("Task Four\n\r");
 			printf("Task four\n");
 		}
 }

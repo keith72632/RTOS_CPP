@@ -1,6 +1,6 @@
-19:03:42 **** Incremental Build of configuration Debug for project TaskScheduler ****
+20:21:40 **** Incremental Build of configuration Debug for project TaskScheduler ****
 make -j12 all 
-arm-none-eabi-g++ "../Src/timers.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/timers.d" -MT"Src/timers.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/timers.o"
+arm-none-eabi-g++ "../Src/tasks.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/tasks.d" -MT"Src/tasks.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/tasks.o"
 arm-none-eabi-g++ -o "TaskScheduler.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/khorton/Documents/TaskSchedulerCPP/TaskScheduler/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TaskScheduler.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: TaskScheduler.elf
  
@@ -8,17 +8,17 @@ arm-none-eabi-size   TaskScheduler.elf
 arm-none-eabi-objdump -h -S  TaskScheduler.elf  > "TaskScheduler.list"
 arm-none-eabi-objcopy  -O binary  TaskScheduler.elf  "TaskScheduler.bin"
    text	   data	    bss	    dec	    hex	filename
-   6732	    140	   1604	   8476	   211c	TaskScheduler.elf
+   7784	    140	   1612	   9536	   2540	TaskScheduler.elf
 Finished building: default.size.stdout
  
 Finished building: TaskScheduler.bin
  
 Finished building: TaskScheduler.list
  
-19:03:45 **** Incremental Build of configuration Debug for project TaskScheduler ****
+20:21:44 **** Incremental Build of configuration Debug for project TaskScheduler ****
 make -j12 all 
 arm-none-eabi-size   TaskScheduler.elf 
    text	   data	    bss	    dec	    hex	filename
-   6732	    140	   1604	   8476	   211c	TaskScheduler.elf
+   7784	    140	   1612	   9536	   2540	TaskScheduler.elf
 Finished building: default.size.stdout
  

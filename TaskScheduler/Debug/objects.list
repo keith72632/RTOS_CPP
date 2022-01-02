@@ -7,4 +7,5 @@
 "./Src/systick.o"
 "./Src/tasks.o"
 "./Src/timers.o"
+"./Src/usart.o"
 "./Startup/startup_stm32f407vgtx.o"

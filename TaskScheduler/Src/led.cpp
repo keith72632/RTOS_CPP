@@ -24,8 +24,8 @@ namespace Led {
 		*led ^= 1 << color ;
 	}
 
-	void delay()
+	void delay(uint32_t divisor)
 	{
-		for(size_t i = 0; i < 1000000; i++);
+		for(size_t i = 0; i < (divisor * 100000); i++);
 	}
 }

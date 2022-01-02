@@ -15,7 +15,8 @@ CPP_SRCS += \
 ../Src/stack.cpp \
 ../Src/systick.cpp \
 ../Src/tasks.cpp \
-../Src/timers.cpp 
+../Src/timers.cpp \
+../Src/usart.cpp 
 
 C_DEPS += \
 ./Src/syscalls.d \
@@ -30,7 +31,8 @@ OBJS += \
 ./Src/sysmem.o \
 ./Src/systick.o \
 ./Src/tasks.o \
-./Src/timers.o 
+./Src/timers.o \
+./Src/usart.o 
 
 CPP_DEPS += \
 ./Src/faults.d \
@@ -39,7 +41,8 @@ CPP_DEPS += \
 ./Src/stack.d \
 ./Src/systick.d \
 ./Src/tasks.d \
-./Src/timers.d 
+./Src/timers.d \
+./Src/usart.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -51,7 +54,7 @@ Src/%.o: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/faults.d ./Src/faults.o ./Src/led.d ./Src/led.o ./Src/main.d ./Src/main.o ./Src/stack.d ./Src/stack.o ./Src/syscalls.d ./Src/syscalls.o ./Src/sysmem.d ./Src/sysmem.o ./Src/systick.d ./Src/systick.o ./Src/tasks.d ./Src/tasks.o ./Src/timers.d ./Src/timers.o
+	-$(RM) ./Src/faults.d ./Src/faults.o ./Src/led.d ./Src/led.o ./Src/main.d ./Src/main.o ./Src/stack.d ./Src/stack.o ./Src/syscalls.d ./Src/syscalls.o ./Src/sysmem.d ./Src/sysmem.o ./Src/systick.d ./Src/systick.o ./Src/tasks.d ./Src/tasks.o ./Src/timers.d ./Src/timers.o ./Src/usart.d ./Src/usart.o
 
 .PHONY: clean-Src
 

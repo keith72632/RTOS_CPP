@@ -19,7 +19,7 @@
 namespace Led {
 	void init_all_leds(void);
 	void led_on(uint32_t color);
-	void delay(void);
+	void delay(uint32_t divisor);
 }
 
 

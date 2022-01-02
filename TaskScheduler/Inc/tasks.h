@@ -10,8 +10,10 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "usart.h"
 
 namespace Tasks {
+	void tasks_uart(USART_t usart);
 	void task_one_handler();
 	void task_two_handler();
 	void task_three_handler();

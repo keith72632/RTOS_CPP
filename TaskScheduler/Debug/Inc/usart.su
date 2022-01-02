@@ -1,0 +1,9 @@
+usart.cpp:14:1:Usart::Usart(USART_t)	16	static
+usart.cpp:50:6:void Usart::init_clocks()	16	static
+usart.cpp:69:6:void Usart::config_gpio()	16	static
+usart.cpp:85:6:void Usart::config_usart()	16	static
+usart.cpp:91:6:void Usart::put(char)	16	static
+usart.cpp:97:6:void Usart::puts(char*)	16	static
+usart.cpp:107:10:uint32_t Usart::get()	24	static
+usart.cpp:114:1:Usart::~Usart()	16	static
+usart.cpp:114:1:virtual Usart::~Usart()	16	static

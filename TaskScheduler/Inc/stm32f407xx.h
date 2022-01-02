@@ -1,0 +1,45 @@
+/*
+ * stm32f407xx.h
+ *
+ *  Created on: Jan 1, 2022
+ *      Author: khorton
+ */
+
+#ifndef STM32F407XX_H_
+#define STM32F407XX_H_
+
+
+#define RCC_AHB1   0x40023830
+#define RCC_APB1   0x40023840
+#define RCC_APB2   0x40023844
+
+#define RCC_USART1 RCC_APB2
+#define RCC_USART2 RCC_APB1
+#define RCC_USART3 RCC_APB1
+#define RCC_USART6 RCC_APB2
+#define RCC_GPIOA  RCC_AHB1
+#define RCC_GPIOC  RCC_AHB1
+
+#define GPIOA_BASE 0x40020000
+#define GPIOA_MODE GPIOA_BASE
+#define GPIOA_AFLR 0x40020020
+
+#define GPIOC_BASE 0x40020800
+#define GPIOC_MODE GPIOC_BASE
+#define GPIOC_AFLR (GPIOC_BASE + 0x20)
+#define GPIOC_AFHR (GPIOC_BASE + 0x24)
+
+#define USART2_BASE 0x40004400
+#define USART2_SR   USART2_BASE
+#define USART2_DR   (USART2_BASE + 0x04)
+#define USART2_BRR  (USART2_BASE + 0x08)
+#define USART2_CR1  (USART2_BASE + 0x0C)
+
+#define USART3_BASE  0x40004800
+#define USART3_SR    USART3_BASE
+#define USART3_DR    (USART3_BASE + 0x04)
+#define USART3_BRR	 (USART3_BASE + 0x08)
+#define USART3_CR1   (USART3_BASE + 0x0C)
+
+
+#endif /* STM32F407XX_H_ */

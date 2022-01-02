@@ -1,0 +1,62 @@
+/*
+ * tasks.cpp
+ *
+ *  Created on: Dec 28, 2021
+ *      Author: khorton
+ */
+
+
+#include "tasks.h"
+#include "led.h"
+#include "timers.h"
+
+namespace Tasks {
+	Usart usart;
+	void task_uart(USART_t usart)
+	{
+		Usart Tasks::usart = Usart(usart);
+	}
+
+	void task_one_handler()
+	{
+		while(1)
+		{
+			Led::led_on(RED);
+//			Timer::dMs(1);
+			printf("Task one\n");
+		}
+	}
+
+	void task_two_handler()
+	{
+		while(1)
+		{
+			Led::led_on(GREEN);
+			Led::delay();
+			printf("Task two\n");
+		}
+	}
+
+	void task_three_handler()
+	{
+		while(1)
+		{
+			Led::led_on(BLUE);
+			Led::delay();
+			printf("Task three\n");
+		}
+	}
+
+	void task_four_handler()
+	{
+		while(1)
+		{
+			Led::led_on(ORANGE);
+			Led::delay();
+			printf("Task four\n");
+		}
+}
+
+}
+
+
